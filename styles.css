@@ -1,49 +1,63 @@
-body{
+/* General Reset & Base Styles */
+body {
   background-color: rgb(255, 255, 255);
-}
-html, body{
   overflow: hidden;
 }
-section{
+html, body {
+  overflow: hidden;
+}
+section {
   height: 100vh;
 }
-.nav-container{
- border: 1px groove rgba(197, 195, 198, 0.5);
- background-color: rgba(255, 255, 255, 0.9);
- width: fit-content;
- height: 60px;
- z-index: 50;
- position: fixed;
- backdrop-filter: blur(5px);
- border-radius: 50px;
- margin-top: 15px;
- margin-left: 256px;
- justify-content: center;
- align-items: center;
- animation: fall 1.5s ease-in-out forwards;
-}
-@keyframes fall{
-  0%{
-    transform: translateY(-200px);
-    opacity: 0;
-  }
-  100%{
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-a{
+
+a {
   text-decoration: none;
   color: rgb(41, 2, 67);
   font-family: 'Arial', serif;
   font-size: large;
-  font-weight: bolder ;
-  transition:opacity 0.5s ease-in-out;
+  font-weight: bolder;
+  transition: opacity 0.5s ease-in-out;
 }
-a:hover{
+a:hover {
   color: rgb(255, 251, 255);
 }
-.button{
+
+/* Navigation Bar */
+.nav-container {
+  border: 1px groove rgba(197, 195, 198, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
+  width: fit-content;
+  height: 60px;
+  z-index: 50;
+  position: fixed;
+  backdrop-filter: blur(5px);
+  border-radius: 50px;
+  margin: 15px 0 0 256px;
+  justify-content: center;
+  align-items: center;
+  animation: fall 1.5s ease-in-out forwards;
+}
+@keyframes fall {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.ul {
+  display: flex;
+  gap: 70px;
+  list-style-type: none;
+  position: relative;
+  left: -23px;
+  top: -7px;
+}
+
+/* Buttons */
+.button {
   text-decoration: none;
   color: rgb(78, 2, 129);
   background-color: rgba(255, 255, 255, 0.9);
@@ -53,61 +67,41 @@ a:hover{
   height: 40px;
   border: none;
   border-radius: 30px;
- 
 }
-.button:hover{
+.button:hover,
+.button:active {
   width: 100px;
   font-size: small;
   color: rgb(255, 251, 255);
   background-color: rgb(78, 2, 129);
   transform: perspective(500px) translateZ(10px);
   align-self: center;
-   width: 100px;
 }
 
-.button:active{
-  width: 100px;
-  font-size: small;
-  color: rgb(255, 251, 255);
-  background-color: rgb(78, 2, 129);
-  transform: perspective(500px) translateZ(10px);
-  align-self: center;
-   width: 100px;
-}
-
-.ul{
-  display: flex;
-  gap: 70px;
-  list-style-type: none;
-  position: relative;
-  left: -23px;
-  top: -7px;
-}
-.content{
+/* Hero Content */
+.content {
   display: flex;
   width: 20%;
   align-items: center;
   gap: 20px;
-  margin-top: 140px;
-  margin-left: 200px;
+  margin: 140px 0 0 200px;
   animation: show 1.5s ease-in-out backwards;
 }
-@keyframes show{
-  0%{
+@keyframes show {
+  0% {
     transform: translateX(-300px);
     opacity: 0;
   }
-  100%{
-    transform: translateX(0px)
+  100% {
+    transform: translateX(0);
   }
 }
-#main{
+#main {
   display: flex;
   align-items: center;
-
   gap: 20px;
 }
-#img{
+#img {
   width: 250px;
   height: 250px;
   border-radius: 125px;
@@ -117,49 +111,45 @@ a:hover{
   top: -100px;
   transition: filter 0.3s ease-in-out;
 }
-#img:hover{
+#img:hover {
   filter: grayscale(100%);
 }
 #spinning {
-  width: 300px; /* Adjust as needed */
+  width: 300px;
   height: 300px;
   border-radius: 150px;
-  animation: spin 5s linear infinite; /* 2-second rotation, infinite loop */
+  animation: spin 5s linear infinite;
   position: relative;
   left: 40px;
   top: -100px;
 }
-
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
-.content2{
+
+/* Text Content */
+.content2 {
   width: 80%;
   align-items: flex-start;
   text-align: center;
   justify-content: left;
-  animation: appear 1.5s ease-in-out forwards ;
+  animation: appear 1.5s ease-in-out forwards;
   margin-top: 80px;
 }
-@keyframes appear{
-  0%{
+@keyframes appear {
+  0% {
     transform: translateX(300px);
     opacity: 0;
   }
-  100%{
-    transform: translateX(0px)
+  100% {
+    transform: translateX(0);
   }
 }
 #intro {
   font-family: 'Arial', sans-serif;
   font-size: 40px;
   color: rgb(41, 2, 67);
-  justify-self: center;
   white-space: nowrap;
   overflow: hidden;
   width: 0;
@@ -167,214 +157,149 @@ a:hover{
   animation: typing 4s steps(30, end) forwards, hideCursor 0.6s 1.0s forwards;
   animation-delay: 0.1s, 0.6s;
 }
-
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
 }
-
 @keyframes hideCursor {
   to { border-right: none; }
 }
-
-
-h2{
-  font-family: 'arail', sans-serif;
+h2 {
+  font-family: 'Arial', sans-serif;
   font-size: 30px;
   color: rgb(41, 2, 67);
-  justify-self: center;
 }
-#line{
+#line {
   width: 120px;
   height: 9px;
   background-color: rgb(204, 181, 204);
-  justify-self: center;
   border-radius: 4.5px;
 }
-#verified{
+#verified {
   position: relative;
   height: 40px;
   width: 40px;
   top: 77px;
   left: 135px;
-  
 }
-#h3{
+#h3 {
   color: rgba(123, 108, 123, 1);
   font-family: Georgia, serif;
   font-weight: lighter;
 }
-#port{
+#port {
   border: 2px solid black;
-  height: auto;
   padding: 10px;
   width: 120px;
   border-radius: 20px;
   font-size: large;
-  justify-self: center;
   animation: bounce 1s infinite;
   transition: 0.3s ease-in-out;
 }
-#port:hover{
+#port:hover {
   background-color: rgb(226, 224, 227);
 }
-
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(20px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  
+  0%, 100% { transform: translateY(20px); }
+  50% { transform: translateY(0px); }
 }
-#arrow{
+#arrow {
   height: 20px;
   width: 20px;
 }
-.sidelogo{
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  position: relative;
-  left: 700px;
-  top: -300px;
-}
-#Services{
+
+/* Services Section */
+#Services {
   justify-content: center;
 }
-#second1{
+#second1 {
   font-size: xx-large;
   color: rgb(41, 2, 67);
   text-align: center;
   font-family: Georgia, serif;
   backdrop-filter: blur(5px);
 }
-.Services{
+.Services {
   display: flex;
-  flex-direction: column; /* Stack rows vertically */
-  align-items: center; /* Center items horizontally */
-  gap: 20px; /* Space between rows */
-
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
-.cards{
-  background-color: rgb(36, 2, 58, 0.1);
+.row {
+  display: flex;
+  gap: 10px;
+}
+.cards {
+  background-color: rgba(36, 2, 58, 0.1);
   height: 180px;
   width: 300px;
   border: 1px solid rgb(195, 171, 211);
   border-radius: 15px;
-  transition: 0.3s ease-in-out;
-  margin: 30px;
-  position: static;
   padding: 20px;
   font-family: Georgia, serif;
   color: rgb(57, 3, 93);
- 
-
+  margin: 30px;
+  transition: 0.3s ease-in-out;
 }
-#maincard{
+.cards:hover {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  width: 310px;
+  background-color: rgb(57, 3, 93);
+  color: white;
+}
+#maincard {
   background-color: rgb(57, 3, 93);
   color: white;
   backdrop-filter: blur(5px);
-  animation: fly 1s linear forwards ;
+  animation: fly 1s linear forwards;
   animation-delay: 2s;
-
 }
-@keyframes fly{
-  0%{
-    transform: translateX(120%)
-   translateY(50%);
-  }
-  100%{
-    transform: translateX(0%)
-    translateY(0%)
-  }
-}
-#maincard:hover{
+#maincard:hover {
   background-color: white;
   color: rgb(57, 3, 93);
-
 }
-
-.cards:hover{
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-  width: 310px;
-  color: white;
-  background-color: rgb(57, 3, 93);
+@keyframes fly {
+  0% {
+    transform: translateX(120%) translateY(50%);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
 }
-#cardanimash1{
-  animation-delay: 4s;
+#cardanimash1 {
   animation: fly2 2s linear forwards;
-
+  animation-delay: 4s;
 }
-
-@keyframes fly2{
-  0%{
-   transform: translateY(50%);
-  }
-  100%{
-    transform:
-    translateY(0%);
-  }
+@keyframes fly2 {
+  0% { transform: translateY(50%); }
+  100% { transform: translateY(0); }
 }
-#cardanimash2{
+#cardanimash2 {
   animation: fly3 1s linear forwards;
   animation-delay: 2s;
-
 }
-@keyframes fly3{
-  0%{
-    transform: translateX(-120%)
-   translateY(50%);
+@keyframes fly3 {
+  0% {
+    transform: translateX(-120%) translateY(50%);
   }
-  100%{
-    transform: translateX(0%)
-    translateY(0%)
+  100% {
+    transform: translateX(0) translateY(0);
   }
 }
-#cardanimash3{
+#cardanimash3, #cardanimash4 {
   animation: fly4 1s linear forwards;
+}
+@keyframes fly4 {
+  0% {
+    transform: translateX(50%) translateY(50%);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
 
-}
-@keyframes fly4{
-  0%{
-    transform: translateX(50%)
-   translateY(50%);
-  }
-  100%{
-    transform: translateX(0%)
-    translateY(0%)
-  }
-}
-#cardanimash4{
-  animation: fly5 1s linear forwards;
-
-}
-@keyframes fly5{
-  0%{
-    transform: translateX(50%)
-   translateY(50%);
-  }
-  100%{
-    transform: translateX(0%)
-    translateY(0%)
-  }
-}
-.row {
-  display: flex;
-  gap: 10px; /* Space between boxes */
-}
-#connect{
-  height: 40px;
-  width: 120px;
-  border-radius: 20px;
-}
-#connect{
-  border: 2px solid white;
-}
-#Section3{
+/* Section 3 */
+#Section3 {
   position: relative;
   overflow: hidden;
   display: flex;
@@ -382,7 +307,7 @@ h2{
   margin-top: 30px;
   background-color: rgb(123, 84, 173);
 }
-.cardon1{
+.cardon1 {
   border-bottom: 2px solid rgb(204, 181, 204);
   background-color: rgba(123, 84, 173, 0.7);
   height: 60vh;
@@ -395,14 +320,12 @@ h2{
   justify-content: center;
   align-items: center;
 }
-.imagecardon2{
+.imagecardon2 {
   position: absolute;
-  height: fit-content;
-  width: fit-content;
-  left: 56%;/* Center the image */
-    transform: translateX(-50%); 
+  left: 56%;
+  transform: translateX(-50%);
 }
-.imagecard{
+.imagecard {
   height: 90vh;
   width: 400px;
   border-radius: 20px;
@@ -410,11 +333,13 @@ h2{
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
   margin-bottom: 60px;
 }
-.imagecard:hover{
+.imagecard:hover {
   transform: scale(1.05);
   box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.7);
 }
-.portnav{
+
+/* Port Navigation */
+.portnav {
   position: relative;
   top: 60px;
   background-color: rgba(255, 255, 255, 0.9);
@@ -422,43 +347,42 @@ h2{
   border-radius: 35px;
   margin-bottom: 20px;
 }
-.portnav ul{
-list-style: none;
-gap: 20px;
-display: flex;
-margin-left: 0px;
-position: relative;
-left: -20px;
-align-items: center;
+.portnav ul {
+  list-style: none;
+  gap: 20px;
+  display: flex;
+  margin-left: 0;
+  position: relative;
+  left: -20px;
+  align-items: center;
 }
-.portnavlist li div{
+.portnavlist li {
+  background-color: rgba(96, 72, 112, 0.5);
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+}
+.portnavlist li div {
   display: grid;
   place-self: center;
   color: white;
   position: relative;
   top: 10px;
 }
-
- 
-
-.portnavlist li{
-  background-color: rgba(96, 72, 112, 0.5);
-  width: 100px;
-  height: 40px;
-  border-radius: 20px;
-}
-.portnavlist li:hover{
-   background-color: rgb(57, 3, 93);
+.portnavlist li:hover {
+  background-color: rgb(57, 3, 93);
   transform: scale(1.05);
   transition: 0.3s ease-in-out;
 }
-#whiteport{
+#whiteport {
   color: white;
   font-family: 'Port Lligat Slab', serif;
   font-size: 40px;
   top: 60px;
   position: relative;
 }
+
+/* Slideshow */
 .slideshow-container {
   height: 3200px;
   width: 500px;
@@ -467,19 +391,14 @@ align-items: center;
   z-index: 1;
   overflow: visible;
 }
-
 .slideshow {
   display: flex;
   flex-direction: column;
   animation: slideUp 40s linear infinite;
-
 }
-
-/* ✅ Pause animation on hover */
 .slideshow-container:hover .slideshow {
   animation-play-state: paused;
 }
-
 .slideshow img {
   height: 600px;
   width: 400px;
@@ -488,21 +407,36 @@ align-items: center;
   z-index: 1;
   margin-left: 50px;
   border-radius: 40px;
-}
-.slideshow img:hover{
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease-in-out;
-
 }
-
+.slideshow img:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
 @keyframes slideUp {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-3200px);
-  }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3200px); }
 }
+
+/* Side Logo */
+.sidelogo {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  position: relative;
+  left: 700px;
+  top: -300px;
+}
+
+/* Connect Button */
+#connect {
+  height: 40px;
+  width: 120px;
+  border-radius: 20px;
+  border: 2px solid white;
+}
+
 
 
 
